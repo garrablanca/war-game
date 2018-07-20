@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+  /*font-family: fantasy;*/
+}
+h1 {
+  color: yellow;
+}
+h2 {
+  color: orange;
+}
+h3 {
+  color: white;
+}
+.hidden,
+.hide {
+  display: none;
+}
+div.message{
+  font-size: 82px;
+  font-family: fantasy;
+}
+
+article.wrapper {
+  display: block;
+  margin: 10px auto;
+  text-align: center;
+  border: 1px solid black;
+  background-color: darkgreen;
+  overflow: auto;
+  font-family: verdana;
+}
+article.wrapper header div.rules {
+  /*border: 1px solid blue;*/
+  display: grid;
+  color: white;
+  font-size: 14px;
+  font-family: sans-serif;
+  text-align: left;
+  width: calc(61% - 1px);
+  display: inline-table;
+}
+article.wrapper section {
+  display: block;
+  float: left;
+  width: calc(50% - 2px);
+  border: 1px solid orange;
+}
+article.wrapper section.player1 {
+  /*border-color: cyan;*/
+  border-radius: 15px;
+}
+article.wrapper section.player2 {
+  /*border-color: magenta;*/
+  border-radius: 15px;
+}
+article.wrapper section > div {
+  width: calc(50% - 10px);
+  background: #fff;
+  border: 1px dotted white;
+  border-radius: 15px;
+}
+article.wrapper section > div.right {
+  float: right;
+}
+article.wrapper section > div.left {
+  float: left;
+}
+article.wrapper section > div.info {
+  padding: 10px;
+}
+article.wrapper section > div.card {
+  font-size: 62px;
+  min-height: 220px;
+  padding-top: 0%;
+}
+article.wrapper section > div.card.spades,
+article.wrapper section > div.card.clubs {
+  color: black;
+}
+article.wrapper section > div.card.diamonds,
+article.wrapper section > div.card.hearts {
+  color: red;
+}
+article.wrapper section > div.card.spades span.name:after {
+  content: "\2660";
+}
+article.wrapper section > div.card.diamonds span.name:after {
+  content: "\2666";
+}
+article.wrapper section > div.card.clubs span.name:after {
+  content: "\2663";
+}
+article.wrapper section > div.card.hearts span.name:after {
+  content: "\2665";
+}
+article.wrapper section > div div[data-points]:after {
+  content: attr(data-points);
+  margin: 0 0 0 5px;
+}
+article.wrapper section > div div[data-score]:after {
+  content: attr(data-score);
+  margin: 0 0 0 5px;
+}
+article.wrapper section > div div[data-cards-left]:after {
+  content: attr(data-cards-left);
+  margin: 0 0 0 5px;
+}
+article.wrapper section > div div[data-games-won]:after {
+  content: attr(data-games-won);
+  margin: 0 0 0 5px;
+}
+article.wrapper footer button.draw, button.restart, button.stop, button.auto  {
+  margin: 10px;
+  padding: 10px;
+  font-size: 22px;
+}

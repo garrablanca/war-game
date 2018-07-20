@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GAME OF WAR</title>
+  <link rel="stylesheet" type="text/css" href="css/lookandfeel.css">
+    <link rel="stylesheet" type="text/css" href="css/deckcards.css">
+  <script src="js/GameOfWar.js"></script>
+  </head>
+  <body>
+    <article  class="wrapper">
+      <header>
+        <h1>GAME OF WAR</h1>
+        <div class="rules">
+          <span>Simple Rules:</br>
+1.-Every Player starts whit 26 cards out of 52 cards deck, very well mixed.</br>
+2.-In every round played, the Player with the greatest value card, wins the round.</br>
+3.-Only If in the round you got tie, the cards stays on table until in the next round one of the players will win; then the round winner collects all the points and cards.</br>
+4.-The ultimate winner for every deal is that one who will left the opponent  whitout any card, regardless the total points.</br>
+4a.- Except if you limit the game to a 100 rounds then the player with more points will win the game.</span>
+        </div>
+      </header>
+      <section class="player1">
+        <h2>PLAYER      ONE</h2>
+        <div class="info left">
+          <div data-points="0">Total Points:</div>
+          <div data-score="0">Collected Cards Value:</div>
+          <div data-cards-left="26">Cards Left:</div>
+          <div data-games-won="0">Games Won:</div>
+        </div>
+        <div class="card right">
+          <span class="name"></span>
+        </div>
+      </section>
+      <section class="player2">
+        <h2>PLAYER TWO</h2>
+        <div class="info right">
+          <div data-points="0">Total Points:</div>
+          <div data-score="0">Collected Cards Value:</div>
+          <div data-cards-left="26">Cards Left:</div>
+          <div data-games-won="0">Games Won:</div>
+        </div>
+        <div class="card left">
+          <span class="name"></span>
+        </div>
+      </section>
+      <footer>
+        <input type="checkbox" id="100rounds" checked=true> Limit to 100 rounds!
+        <input type="checkbox" id="tieWait"> Wait on Tie ?
+        <button class="auto">AUTO PLAY</button>
+        <button class="stop">PAUSE</button>
+        <button class="draw">DRAW</button>
+        <button class="restart">DEAL AGAIN!</button>
+      </footer>
+      <div class="rewards"><span class="name"></span></div>
+      <div class="message"><span class="name"></span></div>
+      <div class="round"><span class="name"></span></div>
+    </article>
+
+  </body>
+</html>
