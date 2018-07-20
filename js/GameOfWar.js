@@ -3,6 +3,7 @@ console.clear();
 
 // Define the Card Class
 var Card = (function(){
+
   // Member Vars
   //index: '# 0-51 signifies the index of a card in a new deck of cards'
   //value: 'numerical value: 1 - 13'
@@ -11,7 +12,6 @@ var Card = (function(){
   // Prototype members
   //number: '2 - 10, J, Q, K, A'
   //name: ' {number} of {suit} '
-
   //          ['Spades', 'Diamonds', 'Clubs', 'Hearts']
   var suitNames = ['spades', 'diamonds', 'clubs', 'hearts'],
       suitCodes = ['\u2664', '\u2662', '\u2667', '\u2661'],
@@ -74,8 +74,6 @@ function init() {
     //console.log( deck[i] );
   //}
 
-
-
   // Deal cards to player2s (2)
   while( deck.length > 0 ){
 
@@ -92,18 +90,7 @@ function init() {
 
 init();
 
-
 var rewards = [];
-
-
-
-/*** END GAME SETUP ***/
-
-// Gameplay
-// push button to draw and play card
-// winner takes cards, added to bottom of their deck
-// tie, play another card
-// game ends when one player2 is out of cards
 
 // Single Round
 var drawAndPlay = function(rewards){
@@ -185,15 +172,13 @@ var drawAndPlay = function(rewards){
     player1CardDiv.setAttribute("style", "background-color: yellow;");
     player2CardDiv.setAttribute("style", "background-color: yellow;");
     if(document.getElementById('tieWait').checked == true){
-    //document.querySelector('div.message').innerHTML = "Hey wait, this is Tie... We should play CHESS insted, Don't you think?  Press Auto to continue!!";
     document.querySelector('button.stop').dispatchEvent(new Event('click'));
+    document.querySelector('div.message').innerHTML = "Hey wait, this is Tie...  Press Auto to continue!!";
     }
     // tie
-      // play another card
+      // keep the cards on the table for next round.
     rewards.push(player2Card);
     rewards.push(player1Card);
-
-  //  return drawAndPlay(rewards);
 
   } else if( player2Card.value > player1Card.value ){
     // player2 wins
@@ -247,7 +232,6 @@ window.onload = function(){
   var rounds = 0;
 
   btnDraw.addEventListener('click', function(event){
-    document.querySelector('div.message').innerHTML = "Waiting...  this game is not over!"
     var keepGoing = drawAndPlay(rewards);
     if( !keepGoing ){
       clearInterval(window.intervalID);
@@ -339,32 +323,6 @@ window.onload = function(){
  btnStop.disabled = true;
 
 };
-
-// Testing play function
-//var keepGoing = true;
-//while( keepGoing ){
-  //keepGoing = drawAndPlay();
-//}
-
-/*
-// PLAY SELF
-var intervalID = setInterval(function(){
-  keepGoing = drawAndPlay();
-  if( !keepGoing ){
-    clearInterval(intervalID);
-    console.log('Game ended');
-  }
-}, 1000);
-*/
-//console.log('Game ended');
-
-// Game Elements
-// Score: number of rounds won (player2, player1)
-// Cards Left in Deck (player2, player1)
-// game board (where cards are played)
-// Draw/Play Button
-// Restart/New Game button (only after game ends)
-// Games won count (player2, player1)
 
 var forceRedraw = function(element){
 
