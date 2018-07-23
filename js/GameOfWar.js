@@ -103,6 +103,8 @@ var drawAndPlay = function(rewards){
     document.querySelector('button.restart').disabled = false;
     document.querySelector('button.stop').disabled = true;
     document.querySelector('button.auto').disabled = true;
+    //If we are here one of the player ran out of cards, at the moment that this happen could we finished with a tie, in which case we will create rewards that will be unused that should be cleaned for the next deal.
+    rounds = 0;
 
     // game over
     if( player2Deck.length > 0 ){
@@ -257,6 +259,7 @@ window.onload = function(){
             winnerMsg = "we have a tie, well if you want, you can play CHESS instead ☺!";
           }
           document.querySelector('div.message').innerHTML = "Ok... At this "+rounds+" rounds, "+winnerMsg;
+          rounds = 0; //<-- This will clean rewards, if there is rewards that hasn't been used.
           btnDraw.disabled = true;
           btnDeal.disabled = false;
           btnAuto.disabled = true;
